@@ -17,6 +17,9 @@ export default {
     },
     methods: {
         getCards() {
+            setTimeout(() => {
+                this.store.loading = false
+            }, 3000);
             axios.get(store.endpoint).then((response) => {
                 this.store.cards = response.data.data
             })

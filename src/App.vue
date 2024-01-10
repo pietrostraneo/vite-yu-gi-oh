@@ -2,10 +2,12 @@
 import { store } from './store';
 import AppHeader from './components/AppHeader.vue'
 import AppMain from './components/AppMain.vue';
+import AppLoader from './components/AppLoader.vue';
 export default {
   components: {
     AppHeader,
     AppMain,
+    AppLoader
   },
   data() {
     return {
@@ -16,6 +18,7 @@ export default {
 </script>
 
 <template>
+  <AppLoader />
   <AppHeader />
   <AppMain />
 </template>

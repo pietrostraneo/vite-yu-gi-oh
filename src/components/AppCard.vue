@@ -16,8 +16,8 @@ export default {
     <div class="col-12 col-md-2">
         <div class="cards">
             <img :src="card.card_images[0].image_url" :alt="card.name" class="img-fluid">
-            <div class="text-center acab">
-                <h4>{{ card.name }}</h4>
+            <div class="text-center cardinfo">
+                <h5>{{ card.name }}</h5>
                 <p>{{card.archetype}}</p>
             </div>
         </div>
@@ -28,14 +28,19 @@ export default {
 @use '../styles/partials/variables' as *;
 @use '../styles/partials/mixins' as *;
 
-.acab {
+.cardinfo {
     background-color: $bg_orange;
     padding: 15px;
     height: 150px;
-}
 
-h4 {
-    color: white;
-    font-weight: bolder;
+    h5 {
+        color: white;
+        font-weight: bolder;
+    }
+
+    p {
+        font-weight: 300;
+        font-size: 1.5rem;
+    }
 }
 </style>
