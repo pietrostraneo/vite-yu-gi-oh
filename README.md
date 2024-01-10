@@ -9,3 +9,5 @@ https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0 (usate direttament
 Bonus: Creare un componente loader da visualizzare fintantoché i risultati non sono pronti.
 
 Documentazione: https://ygoprodeck.com/api-guide/
+
+ESERCIZIO CONSEGNATO
