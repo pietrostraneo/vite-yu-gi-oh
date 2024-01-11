@@ -27,7 +27,7 @@ export default {
                         <button class="btn btn-success" @click="$emit('searchCard')">Search</button>
                     </div>
                     <div class="col-auto">
-                        <button class="btn btn-danger"@click="">Reset</button>
+                        <button class="btn btn-danger"@click="$emit('resetCard')">Reset</button>
                     </div>
                 </div>
             </div>

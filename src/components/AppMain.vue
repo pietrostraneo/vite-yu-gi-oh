@@ -30,7 +30,7 @@ export default {
             let cardApi = store.endpoint
 
             if (store.search !== '') {
-                cardApi += `&name=${store.search}`
+                cardApi += `&fname=${store.search}`
             }
 
             if (store.type !== '') {
@@ -46,6 +46,12 @@ export default {
             axios.get(store.archPoint).then((response) => {
                 this.store.archetypes = response.data
             })
+        },
+
+        resetApi() {
+            store.search = ''
+            store.type = ''
+            this.getCards()
         }
     },
 }
@@ -53,7 +59,7 @@ export default {
 <template lang="">
     <main>
 
-        <AppSearch @searchCard="getCards" />
+        <AppSearch @searchCard="getCards" @resetCard="resetApi" />
         
         <section id="card-container">
             <div class="container-fluid">
