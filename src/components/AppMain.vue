@@ -2,14 +2,16 @@
 import { store } from '../store.js';
 import axios from 'axios'
 import AppCard from './AppCard.vue';
+import AppSearch from './AppSearch.vue';
 export default {
     name: 'AppMain',
     components: {
-        AppCard
+        AppCard,
+        AppSearch
     },
     data() {
         return {
-            store
+            store,
         }
     },
     created() {
@@ -17,18 +19,28 @@ export default {
     },
     methods: {
         getCards() {
+
             setTimeout(() => {
                 this.store.loading = false
             }, 3000);
-            axios.get(store.endpoint).then((response) => {
+
+            let cardApi = store.endpoint
+
+            if (store.search !== '') {
+                cardApi += `?name=${store.search}`
+            }
+
+            axios.get(cardApi).then((response) => {
                 this.store.cards = response.data.data
             })
-        }
+        },
     },
 }
 </script>
 <template lang="">
     <main>
+
+        <AppSearch @searchCard="getCards" />
         
         <section id="card-container">
             <div class="container-fluid">
