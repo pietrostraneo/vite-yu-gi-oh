@@ -11,7 +11,7 @@ export default {
 <template lang="">
     <section id="filters">
             <div class="container-fluid">
-                <div class="row mb-3 text-center">
+                <div class="row mb-3 text-center d-flex align-items-end">
                     <div class="col-auto">
                         <label for="search" class="mb-1">Search</label>
                         <input type="text" name="search" id="search" class="form-control" placeholder="Search a card.." v-model="store.search">
