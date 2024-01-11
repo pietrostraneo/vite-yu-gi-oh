@@ -16,24 +16,37 @@ export default {
     },
     created() {
         this.getCards()
+        this.getArchetypes()
     },
     methods: {
         getCards() {
 
+            store.loading = true
+
             setTimeout(() => {
                 this.store.loading = false
-            }, 3000);
+            }, 1000);
 
             let cardApi = store.endpoint
 
             if (store.search !== '') {
-                cardApi += `?name=${store.search}`
+                cardApi += `&name=${store.search}`
+            }
+
+            if (store.type !== '') {
+                cardApi += `&archetype=${store.type}`
             }
 
             axios.get(cardApi).then((response) => {
                 this.store.cards = response.data.data
             })
         },
+
+        getArchetypes() {
+            axios.get(store.archPoint).then((response) => {
+                this.store.archetypes = response.data
+            })
+        }
     },
 }
 </script>

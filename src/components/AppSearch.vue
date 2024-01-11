@@ -18,8 +18,9 @@ export default {
                     </div>
                     <div class="col-auto">
                         <label for="type" class="mb-1">Archetype</label>
-                        <select name="type" id="type" class="form-select">
+                        <select name="type" id="type" class="form-select" v-model="store.type">
                             <option value="">Choose the archetype..</option>
+                            <option :value="type.archetype_name" v-for="type, index in store.archetypes" :key="index">{{type.archetype_name}}</option>
                         </select>
                     </div>
                     <div class="col-auto">
