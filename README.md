@@ -10,4 +10,4 @@ Bonus: Creare un componente loader da visualizzare fintantoché i risultati non 
 
 Documentazione: https://ygoprodeck.com/api-guide/
 
-ESERCIZIO CONSEGNATO
+ESERCIZIO CONSEGNATO!
